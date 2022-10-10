@@ -6,6 +6,11 @@ export const Container = styled.main`
   flex-direction: column;
   text-align: center;
   height: 100vh;
+
+  // md
+  @media only screen and (min-width: 769px) and (max-width: 1024px){
+    height: auto;
+  }
 `;
 
 export const ContentCTA = styled.section`
@@ -26,6 +31,7 @@ export const ContentCTA = styled.section`
     justify-content: center;
   }
 
+  // md
   @media only screen and (min-width: 769px) and (max-width: 1024px){
     padding-top: 50vw;
 
