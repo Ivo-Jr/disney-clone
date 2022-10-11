@@ -5,7 +5,7 @@ export const Nav = styled.nav`
   top: 0;
   left: 0;
   right: 0;
-  height: 72px;
+  height: ${props => props.logged ? '72px' : '70px'};
   background-color: #040714;
   display: flex;
   justify-content: space-between;
@@ -17,23 +17,21 @@ export const Nav = styled.nav`
 
 export const NavMenu = styled.nav`
   align-items: center;
-  display: flex;
+  display: ${props => props.logged ? 'flex' : 'none'};
   flex-flow: row nowrap;
   height: 100%;
   justify-content: flex-end;
   padding: 0px;
   position: relative;
   margin: auto;
-  margin-left: 18px;
+  margin-left: 0px;
 
   a {
     display: flex;
     align-items: center;
     padding: 0px;
 
-    & + a {
-      margin-left: 12px;
-    }
+    margin: 0px 18px;
     
     img {
       height: 20px;
@@ -46,10 +44,12 @@ export const NavMenu = styled.nav`
 
     span {
       color: rgba(249, 249, 249);
-      font-size: 13px;
-      letter-spacing: 1.42px;
+      font-size: 13.21px;
+      font-weight: bold;
+      letter-spacing: 1px;
       line-height: 1.08;
-      padding: 2px 0px 0px 8px;
+      
+      margin-left: 8px;
       white-space: nowrap;
       position: relative;
 
@@ -57,7 +57,7 @@ export const NavMenu = styled.nav`
       content: "";
       background-color: rgba(249, 249, 249);
       border-radius: 0px 0px 4px 4px;
-      bottom: -6px;
+      bottom: -7px;
       height: 2px;
       left: 0;
       opacity: 0;
@@ -71,6 +71,7 @@ export const NavMenu = styled.nav`
       width: auto;
     
     }
+
   }
 
     &:hover {
@@ -79,6 +80,18 @@ export const NavMenu = styled.nav`
         visibility: visible;
         opacity: 1 !important;
       }
+    }
+  }
+
+  .more-icon{
+    img {
+      position: relative;
+
+      top: -2px;
+      left: 2px;
+
+      height: 36px;
+      width: 36px;
     }
   }
 
@@ -91,7 +104,7 @@ export const Logo = styled.a`
   display: inline-block;
   padding: 0;
   width: 80px;
-  margin: 4px 14px 4px 19px;
+  margin: 4px 14px 5px 19px;
   max-height: 70px;
   font-size: 0;
 
@@ -102,11 +115,7 @@ export const Logo = styled.a`
     width: 100%;
   }
 
-  ${props => props.logged ?
-    css`
-    
-    `
-      :
+  ${props => props.logged &&
     css`
       margin: 0px 32px 0px 0px;
       

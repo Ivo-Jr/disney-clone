@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import {
   Nav, 
@@ -8,13 +8,27 @@ import {
 } from './styles';
 
 export const Header = (props) => {
-  const [logged, setLogged] = useState(false);
+  const [logged, setLogged] = useState(true);
+  // const [scroll, setScroll] = useState(false);
+  // const handleScroll = () => {
+  //     window.addEventListener('scroll', () => {
+  //         if(window.scrollY > 90) {
+  //             setScroll(true)
+  //         }else setScroll(false);
+  //     });
+  //     return () => {
+  //         window.removeEventListener('scroll')
+  //     };
+  // }
+  
+  // useEffect(() => {
+  //     handleScroll();
+  // },[]);
 
   return(
-    <Nav>
+    <Nav logged={logged}>
       <Logo logged={logged}>
-      
-        <img src="/images/logoLogged.svg" alt="logo-disney" />
+        <img src={logged ? `/images/logoLogged.svg` : `/images/logo.svg`} alt="logo-disney" />
       </Logo>
       <NavMenu logged={logged}>
         <a href="/home">
@@ -25,7 +39,7 @@ export const Header = (props) => {
           <img src="/images/search-icon.svg" alt="search" />
           <span>SEARCH</span>
         </a>
-        <a href="/">
+        <a href="/" className="more-icon">
           <img src="/images/more-icon.svg" alt="more" />
           <span>WATCHLIST</span>
         </a>
