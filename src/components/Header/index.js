@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useMemo } from 'react';
-import { auth, 
+import { 
+  auth, 
   provider, 
   signInWithPopup,
   signOut, 
-  onAuthStateChanged
+  onAuthStateChanged 
 } from '../../services/firebase';
 import { useAuth } from '../../hooks/auth';
 import { avatar } from '../../utils/avatars';
@@ -19,7 +20,7 @@ import {
 } from './styles';
 
 export const Header = (props) => {
-  const { user, logged, logIn } = useAuth();
+  const { user, logged, logIn, logOut } = useAuth();
   
   const profileImg = useMemo(() => {
     const index = Math.floor(Math.random() * avatar.length);
@@ -41,17 +42,19 @@ export const Header = (props) => {
       })
     } else if(user){
       signOut(auth).then(() => {
+        logOut();
+
         console.log('VAI SAIR!')
       })
       .catch((err) => alert(err.message))
     }
   };
 
-  useEffect(() => {
-    onAuthStateChanged(auth, async (user) => {
-      console.log(user, 'OI')
-    })
-  },[]);
+  // useEffect(() => {
+  //   onAuthStateChanged(auth, async (user) => {
+  //     console.log(user, 'OI')
+  //   })
+  // },[]);
 
   
   // const [scroll, setScroll] = useState(false);

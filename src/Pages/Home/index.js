@@ -2,10 +2,10 @@ import React from 'react';
 
 import { Container } from './styles';
 
-export const LoginLayout = ({children}) => {
+export const Home = () => {
   return(
     <Container>
-      {children}
+      <h1>Hello Disney!</h1>
     </Container>
-  )
+  );
 }

@@ -1,22 +1,17 @@
 import React from 'react';
 
 import { Routes, Route } from 'react-router-dom';
-import { Header } from '../components/Header';
-import { LoginLayout } from '../components/LoginLayout';
-import { Login } from '../components/Login';
+import { Login } from '../Pages/Login';
 import { Layout } from '../components/Layout';
+import { Home } from '../Pages/Home';
 
 export const AppRoutes = () => {
   return(
     <Routes>
-      {/* <Route path='/' element={
-        <LoginLayout>
-          <Header />
-          <Login />
-        </LoginLayout>
-      }/> */}
-
-      <Route path='/' element={<Layout />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Login />}/>
+        <Route path="/home" element={<Home />}/>
+      </Route>
     </Routes>
   )
 }

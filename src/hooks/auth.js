@@ -17,7 +17,6 @@ export const AuthProvider = ({ children }) => {
       return userInfo
     }}
   );
-
   const logIn = (name, email, photo) => {
     if(name && email){
       sessionStorage.setItem('@disney-clone:user', true);
@@ -36,13 +35,12 @@ export const AuthProvider = ({ children }) => {
         photo: photo
       });
     }
-  }
-
+  };
   const logOut = () => {
     sessionStorage.removeItem('@disney-clone:user');
+    sessionStorage.removeItem('@disney-clone:userInfo');
     setLogged(false);
-
-  }
+  };
 
   return(
     <AuthContext.Provider
