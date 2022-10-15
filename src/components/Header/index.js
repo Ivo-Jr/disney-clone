@@ -28,7 +28,7 @@ export const Header = (props) => {
   },[user]);
 
   const handleAuth = () => {
-    if(!user){
+    if(!logged){
       signInWithPopup(auth, provider).then((result) => {
         const email = result.user.email;
         const name = result.user.displayName;
@@ -40,11 +40,10 @@ export const Header = (props) => {
       }).catch((error) => {
         alert(error.message)
       })
-    } else if(user){
+    } else if(logged){
       signOut(auth).then(() => {
         logOut();
-
-        console.log('VAI SAIR!')
+        console.log('log Out!');
       })
       .catch((err) => alert(err.message))
     }

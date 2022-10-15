@@ -199,7 +199,7 @@ export const SignOut = styled.div`
 
   cursor: pointer;
     
-  &:hover div{
+  &:hover ${Dropdown}{
     visibility: visible;
   }
 `;

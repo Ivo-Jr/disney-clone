@@ -1,11 +1,14 @@
 import React from 'react';
+import { ImgSlider } from '../../components/ImgSlider';
 
-import { Container } from './styles';
+import { 
+  Container,
+} from './styles';
 
 export const Home = () => {
   return(
     <Container>
-      <h1>Hello Disney!</h1>
+      <ImgSlider />
     </Container>
   );
 }
