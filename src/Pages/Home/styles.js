@@ -5,7 +5,7 @@ export const Container = styled.div`
   min-height: calc(100vh - 250px);
   overflow: hidden;
   
-  display: block; 
+  display: block;
   top: 72px;
   padding: 0 calc(3.5vw + 5px);
   
