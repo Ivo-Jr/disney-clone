@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { useMovie } from '../../hooks/movies';
+import { SkeletonCard } from '../SkeletonCard';
+
 import { 
   Container,
   Content,
@@ -8,42 +11,25 @@ import {
 } from './styles';
 
 export const Featured = () => {
+  const { featured } = useMovie();
+
   return(
     <Container>
       <h4>Featured Marvel</h4>
       <Content>
-        <Wrap>
-          <Link to="">
-            <img 
-              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F55A42F25F3F398E7CA6A89D4ECDFBDA804D283B7EABC31C156085824292E212/badging?width=400&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal" 
-              alt="" 
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="">
-            <img 
-              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F55A42F25F3F398E7CA6A89D4ECDFBDA804D283B7EABC31C156085824292E212/badging?width=400&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal" 
-              alt="" 
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="">
-            <img 
-              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F55A42F25F3F398E7CA6A89D4ECDFBDA804D283B7EABC31C156085824292E212/badging?width=400&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal" 
-              alt="" 
-            />
-          </Link>
-        </Wrap>
-        <Wrap>
-          <Link to="">
-            <img 
-              src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/F55A42F25F3F398E7CA6A89D4ECDFBDA804D283B7EABC31C156085824292E212/badging?width=400&aspectRatio=1.78&format=jpeg&label=disneyplusoriginal" 
-              alt="" 
-            />
-          </Link>
-        </Wrap>
+        { featured && 
+            featured.map((feature, idx) => (
+              <Wrap key={idx}>
+                <Link to="">
+                  <img 
+                    src={feature.cardImg} 
+                    alt={feature.title}
+                  />
+                </Link>
+              </Wrap>
+            ))
+            || <SkeletonCard cards={4} />
+        }
       </Content>
     </Container>
   )
