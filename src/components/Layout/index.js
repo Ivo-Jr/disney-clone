@@ -11,9 +11,10 @@ export const Layout = () => {
   useEffect(() => {
     if(!logged) {
       navigate('/', {replace: true})
-    } else {
-      navigate('/home', { replace: true})
-    }
+    } 
+    // else {
+    //   navigate('/home', { replace: true})
+    // }
   },[logged, navigate]);
 
   return(
