@@ -1,4 +1,5 @@
 import React from 'react';
+import { SkeletonTheme } from 'react-loading-skeleton';
 
 import { MovieProvider } from '../../hooks/movies';
 import { Featured } from '../../components/Featured';
@@ -12,15 +13,17 @@ import { Container } from './styles';
 
 export const Home = () => {
   return(
-    <MovieProvider>
-      <Container>
-        <ImgSlider />
-        <Viewers />
-        <Recommends />
-        <NewDisney />
-        <Featured />
-        <Trending />
-      </Container>
-    </MovieProvider>
+    <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <MovieProvider>
+        <Container>
+          <ImgSlider />
+          <Viewers />
+          <Recommends />
+          <NewDisney />
+          <Featured />
+          <Trending />
+        </Container>
+      </MovieProvider>
+    </SkeletonTheme>
   );
 }
