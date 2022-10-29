@@ -13,6 +13,27 @@ export const Nav = styled.nav`
   padding: 0 36px;
   letter-spacing: 16px;
   z-index: 3;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 170px;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    transition: height 300ms ease 0s;
+    background: linear-gradient(to top, 
+      rgba(0, 0, 0, 0), 
+      rgba(0, 0, 0, 0.03) 15%, 
+      rgba(0, 0, 0, 0.125) 30%, 
+      rgba(0, 0, 0, 0.25) 46%, 
+      rgba(0, 0, 0, 0.4) 61%, 
+      rgba(0, 0, 0, 0.553) 75%, 
+      rgba(0, 0, 0, 0.694) 88%, 
+      rgba(0, 0, 0, 0.8));
+    z-index: -1;
+    pointer-events: none;
+}
 `;
 
 export const NavMenu = styled.nav`

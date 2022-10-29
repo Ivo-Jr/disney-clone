@@ -19,8 +19,8 @@ export const AppRoutes = () => {
 
       <Route path="/home" element={<Layout />}>
         <Route path="" element={<Home />} />
-        <Route path="id" element={<Details />} />
+        <Route path="detail/:id" element={<Details />} />
       </Route>
-    </Routes>
+    </Routes> 
   )
 }

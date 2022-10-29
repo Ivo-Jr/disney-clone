@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { 
   auth, 
   provider, 
@@ -32,7 +32,6 @@ export const Header = (props) => {
       signInWithPopup(auth, provider).then((result) => {
         const email = result.user.email;
         const name = result.user.displayName;
-
         const photo = profileImg;
 
         logIn(name, email, photo);
@@ -40,7 +39,8 @@ export const Header = (props) => {
       }).catch((error) => {
         alert(error.message)
       })
-    } else if(logged){
+    } 
+    else if(logged){
       signOut(auth).then(() => {
         logOut();
         console.log('log Out!');

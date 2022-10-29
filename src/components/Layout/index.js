@@ -12,9 +12,6 @@ export const Layout = () => {
     if(!logged) {
       navigate('/', {replace: true})
     } 
-    // else {
-    //   navigate('/home', { replace: true})
-    // }
   },[logged, navigate]);
 
   return(
