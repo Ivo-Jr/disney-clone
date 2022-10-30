@@ -94,8 +94,6 @@ export const Classification = styled.div`
 export const Genre = styled.div`
 `;
 
-
-
 export const Controls = styled.div`
     display: flex;
     align-items: center;
@@ -208,5 +206,22 @@ export const AddList = styled.button`
 `;
 
 export const GroupWatch = styled(AddList)`
-  margin: 0px
+  margin: 0px;
 `;
+
+export const Description = styled.p`
+  font-size: 20px;
+  letter-spacing: -.1px;
+  line-height: 1.6;
+  
+  margin: 0;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  
+  color: #f9f9f9;
+
+  @media (max-width: 748px) {
+    font-size: 14px;
+  }
+`;
+

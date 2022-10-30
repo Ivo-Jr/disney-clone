@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
+import { db, collection } from '../../services/firebase';
 import SvgIcon from '../SvgIcon';
 
 import { 
@@ -16,11 +18,21 @@ import {
   Trailer,
   MoreOptions,
   AddList,
-  GroupWatch
+  GroupWatch,
+  Description
 } from './styles';
 
 
 export const Details = () => {
+  const { id } = useParams();
+
+  console.log(id, '**');
+
+  useEffect(() => {
+    db.collection('movies')
+
+  }, [])
+
   return(
     <Container>
       <Content>
@@ -70,6 +82,9 @@ export const Details = () => {
             </MoreOptions>
           </Controls>
 
+          <Description>
+            Marvel Studios presents “WandaVision,” a blend of classic television and the Marvel Cinematic Universe in which Wanda Maximoff (Elizabeth Olsen) and Vision (Paul Bettany)—two super-powered beings living idealized suburban lives—begin to suspect that everything is not as it seems. The new series is directed by Matt Shakman; Jac Schaeffer is head writer.
+          </Description>
         </ContentMeta>
       </Content>
     </Container>
