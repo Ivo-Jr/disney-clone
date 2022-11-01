@@ -4,9 +4,9 @@ import {
   GoogleAuthProvider, 
   signInWithPopup,
   signOut,
-  onAuthStateChanged,
+  onAuthStateChanged
 } from 'firebase/auth';
-import { getFirestore, onSnapshot, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, onSnapshot, collection, getDocs, setDoc } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: "AIzaSyC0p7BWxIl9Zng8yd6v9xI0Gd4uX2sCXjo",
@@ -32,5 +32,6 @@ export {
   onSnapshot,
   collection,
   db,
-  getDocs
+  getDocs,
+  setDoc
 };

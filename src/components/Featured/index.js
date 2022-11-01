@@ -20,7 +20,7 @@ export const Featured = () => {
         { featured && 
             featured.map((feature, idx) => (
               <Wrap key={idx}>
-                <Link to="">
+                <Link to={`/detail/${feature.id}`}>
                   <img 
                     src={feature.cardImg} 
                     alt={feature.title}
