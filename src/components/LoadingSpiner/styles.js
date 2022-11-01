@@ -1,4 +1,14 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`; 
 
 export const Container = styled.div`
   display: flex;
@@ -6,9 +16,10 @@ export const Container = styled.div`
   align-items: center;
   width: 100vw;
   height: 100vh;
-  
+
   img{
     width: 92px;
     height: 92px;
+    animation: ${rotate} 2s linear infinite;
   }
 `;

@@ -1,10 +1,9 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { 
   auth, 
   provider, 
   signInWithPopup,
   signOut, 
-  onAuthStateChanged 
 } from '../../services/firebase';
 import { useAuth } from '../../hooks/auth';
 import { avatar } from '../../utils/avatars';
