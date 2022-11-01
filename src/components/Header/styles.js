@@ -6,13 +6,15 @@ export const Nav = styled.nav`
   left: 0;
   right: 0;
   height: ${props => props.logged ? '72px' : '70px'};
-  background-color: #040714;
+  background-color: ${props => props.scroll ? '#040714' : 'transparent'};
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 36px;
   letter-spacing: 16px;
   z-index: 3;
+
+  transition: all 0.2s ease-in-out 0s;
 
   &:after {
     content: '';
@@ -33,7 +35,7 @@ export const Nav = styled.nav`
       rgba(0, 0, 0, 0.8));
     z-index: -1;
     pointer-events: none;
-}
+  }
 `;
 
 export const NavMenu = styled.nav`
@@ -47,6 +49,8 @@ export const NavMenu = styled.nav`
   margin: auto;
   margin-left: 0px;
 
+  transition: all 200ms ease 0s;
+
   a {
     display: flex;
     align-items: center;
@@ -56,9 +60,15 @@ export const NavMenu = styled.nav`
     
     img {
       height: 20px;
+      width: 24px;
+    }
 
-      // lg
-      @media only screen and (min-width: 1024px){
+    // lg
+    @media only screen and (max-width: 1023px){
+      margin: 0px 12px;
+      
+      img{
+        height: 24px;
         width: 24px;
       }
     }
@@ -73,6 +83,10 @@ export const NavMenu = styled.nav`
       margin-left: 8px;
       white-space: nowrap;
       position: relative;
+
+      @media screen and (max-width: 1023px){
+        margin: 13px 0px 13px 8px;
+      }
 
     &:before {
       content: "";
@@ -115,6 +129,12 @@ export const NavMenu = styled.nav`
       width: 36px;
     }
   }
+
+  ${props => props.className && css`    
+    span:nth-child(-n+3) {
+      display: none;
+    }
+  `}
 
   /* @media(max-width: 768px){
     display: none;
@@ -201,12 +221,16 @@ export const Dropdown = styled.div`
   padding: 10px;
   font-size: 14px;
   letter-spacing: 3px;
-  width: 100px;
+  width: max-content;
   visibility: hidden;
 
   &:hover{
     color: #fff;
   } 
+
+  span {
+    display: flex !important;
+  }
 `;
 
 export const SignOut = styled.div`
@@ -219,7 +243,19 @@ export const SignOut = styled.div`
   transition: all 1s;
 
   cursor: pointer;
-    
+
+  // lg
+  img {
+    height: 20px;
+    width: 24px;
+
+    @media only screen and (max-width: 1023px){
+      height: 24px;
+      width: 24px;
+    }
+  }
+  
+
   &:hover ${Dropdown}{
     visibility: visible;
   }

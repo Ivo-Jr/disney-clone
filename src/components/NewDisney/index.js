@@ -20,7 +20,7 @@ export const NewDisney = () => {
         { newsDisney && 
             newsDisney.map((disney, idx) => (
               <Wrap key ={idx}>
-                <Link to="">
+                <Link to={`/detail/${disney.id}`}>
                   <img 
                     src={disney.cardImg} 
                     alt={disney.title}

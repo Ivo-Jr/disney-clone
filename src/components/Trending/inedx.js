@@ -20,7 +20,7 @@ export const Trending = () => {
         { trending &&
             trending.map((trend, idx) => (
               <Wrap key={idx}>
-                <Link to="">
+                <Link to={`/detail/${trend.id}`}>
                   <img 
                     src={trend.cardImg}
                     alt={trend.title}

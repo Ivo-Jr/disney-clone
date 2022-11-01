@@ -20,7 +20,7 @@ export const Recommends = () => {
         { recommends && 
             recommends.map((recommend, idx) => (
               <Wrap key={idx}>
-                <Link to="">
+                <Link to={`/detail/${recommend.id}`}>
                   <img 
                     src={recommend.cardImg} 
                     alt={recommend.title} 

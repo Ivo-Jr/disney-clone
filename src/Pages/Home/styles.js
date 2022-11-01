@@ -6,8 +6,9 @@ export const Container = styled.div`
   overflow: hidden;
   
   display: block;
-  top: 72px;
+  /* top: 72px; */
   padding: 0 calc(3.5vw + 5px);
+  padding-top: 72px;
   
   &:after {
     background: url("/images/background-home.png") center center / cover
