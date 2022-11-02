@@ -18,9 +18,13 @@ import {
   Dropdown
 } from './styles';
 
-export const Header = (props) => {
+export const Header = () => {
   const [ scroll, setScroll ] = useState(false);
-  const [ compressionMenu, setCompressionMenu ] = useState(false);
+  const [ compressionMenu, setCompressionMenu ] = useState(() => {
+    if(window.innerWidth  < 1024) {
+      return true
+    } else { return false}
+  });
   const { user, logged, logIn, logOut } = useAuth();
 
   const profileImg = useMemo(() => {
@@ -45,7 +49,6 @@ export const Header = (props) => {
         || document.documentElement.clientWidth
         || document.body.clientWidth;
 
-        console.log(width, '@@')
       if(width < 1024){
         setCompressionMenu(true)
       } else setCompressionMenu(false)
@@ -82,14 +85,12 @@ export const Header = (props) => {
     handleWidth();
   },[]);
 
-  console.log(compressionMenu, '<<')
-
   return(
     <Nav scroll={scroll} logged={logged}>
       <Logo logged={logged}>
         <img src={logged ? `/images/logoLogged.svg` : `/images/logo.svg`} alt="logo-disney" />
       </Logo>
-
+      
       {!logged ? 
         <Login onClick={handleAuth}>
           Log in
@@ -112,8 +113,8 @@ export const Header = (props) => {
 
             { compressionMenu 
               ?
-                <SignOut className="com">
-                  <img src="/images/expanding-icon.svg" alt="expanding" />
+                <SignOut>
+                  <img className="compression-icon" src="/images/expanding-icon.svg" alt="expanding" />
                   <Dropdown className="">
                     <a href="/">
                       <img src="/images/star-icon.svg" alt="star" />
@@ -144,11 +145,10 @@ export const Header = (props) => {
                   </a>
                 </>
             }
-
           </NavMenu>
 
           <SignOut>
-              <UserImg src={user?.photo} alt={user?.name}/>
+              <UserImg id="userPhoto" src={user?.photo} alt={user?.name}/>
               <Dropdown id="signOut">
                 <span onClick={handleAuth}>Sign out</span>
               </Dropdown>

@@ -64,7 +64,7 @@ export const ImageTitle = styled.div`
 `;
 
 export const ContentMeta = styled.div`
-  width: 874px;
+  max-width: 874px;
 `;
 
 export const InfoMovie = styled.div`
@@ -95,11 +95,16 @@ export const Genre = styled.div`
 `;
 
 export const Controls = styled.div`
-    display: flex;
-    align-items: center;
-    flex-flow: row wrap;
-    margin: calc(28px) -8px -4px;
-    min-height: 56px;
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+  margin: calc(28px) -8px -4px;
+  min-height: 56px;
+
+  // md
+  @media (max-width: 768px) {
+    /* margin: calc(28px) 0px -4px; */
+  }
 `;
 
 export const Player = styled.button`
@@ -117,6 +122,7 @@ export const Player = styled.button`
   line-height: 1.6;
   letter-spacing: 1px;
   text-align: center;
+  -webkit-font-smoothing: antialiased;
   text-transform: uppercase;
   
   color: #0e0b14;
@@ -139,14 +145,14 @@ export const Player = styled.button`
   }
 
   @media (max-width: 768px) {
-    height: 45px;
-    padding: 0px 12px;
+    margin: 0.25rem 0.5rem;
+    padding: 0 1rem;
+    
+    height: 32px;
+
+    letter-spacing: 1.5px;
+    font-weight: 900;
     font-size: 12px;
-    margin: 0px 10px 0px 0px;
-  
-    img {
-      width: 25px;
-    }
   }
 `;
 
@@ -162,6 +168,11 @@ export const Trailer = styled(Player)`
   &:hover{
     color: rgba(0, 0, 0, 0.8);
     background: rgb(249, 249, 249)
+  }
+
+  // md
+  @media (max-width: 768px) {
+    height: 26px;
   }
 `;
 
@@ -220,6 +231,7 @@ export const Description = styled.p`
   
   color: #f9f9f9;
 
+  // md
   @media (max-width: 748px) {
     font-size: 14px;
   }

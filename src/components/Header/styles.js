@@ -36,6 +36,11 @@ export const Nav = styled.nav`
     z-index: -1;
     pointer-events: none;
   }
+
+  //mg
+  @media only screen and (max-width: 768px){
+    padding: 0px 20px;
+  }
 `;
 
 export const NavMenu = styled.nav`
@@ -104,7 +109,6 @@ export const NavMenu = styled.nav`
       transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
       visibility: hidden;
       width: auto;
-    
     }
 
   }
@@ -159,7 +163,7 @@ export const Logo = styled.a`
   ${props => props.logged &&
     css`
       margin: 0px 32px 0px 0px;
-      
+
       img {
         width: 79px;
         height: 48px;
@@ -167,6 +171,17 @@ export const Logo = styled.a`
     `
   }
 
+  //mg
+  @media only screen and (max-width: 768px){
+    margin: 0px 7px 0px 0px;
+
+    img{
+      height: 38px;
+      width: 63;
+
+      margin: -8px;
+    }
+  }
 `;
 
 export const Login = styled.a`
@@ -207,6 +222,10 @@ export const Login = styled.a`
 export const UserImg = styled.img`
   height: 100%;
   width: 100%;
+
+  @media screen and (max-width: 768px){
+    margin: 3px 0px 0px 7px;
+  }
 `;
 
 export const Dropdown = styled.div`
@@ -244,19 +263,19 @@ export const SignOut = styled.div`
 
   cursor: pointer;
 
-  // lg
-  img {
-    height: 20px;
-    width: 24px;
-
-    @media only screen and (max-width: 1023px){
-      height: 24px;
-      width: 24px;
-    }
-  }
-  
-
   &:hover ${Dropdown}{
     visibility: visible;
+  }
+
+  .compression-icon{
+    height: 24px; 
+    width: 24px;
+  }
+
+  @media screen and (max-width: 768px){
+    img{
+      height: 36px;
+      width: 36px;
+    }
   }
 `;
