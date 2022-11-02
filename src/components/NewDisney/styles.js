@@ -2,6 +2,16 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   padding: 0 0 26px;
+
+  h4 {
+    letter-spacing: .11px;
+    
+    // lg
+    @media only screen and (min-width: 1024px){
+      font-size: 20px;
+      line-height: 1.4;
+    }
+  }
 `;
 
 export const Content = styled.div`

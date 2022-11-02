@@ -10,6 +10,7 @@ import { Trending } from '../../components/Trending/inedx';
 import { Viewers } from '../../components/Viewers';
 
 import { Container } from './styles';
+import { Footer } from '../../components/Footer';
 
 export const Home = () => {
   return(
@@ -22,6 +23,7 @@ export const Home = () => {
           <NewDisney />
           <Featured />
           <Trending />
+          <Footer />
         </Container>
       </MovieProvider>
     </SkeletonTheme>

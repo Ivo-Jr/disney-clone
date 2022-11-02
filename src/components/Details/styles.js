@@ -2,12 +2,20 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   background-color: rgb(26, 29, 41);
-  position: fixed;
+  position: relative;
   height: 100vh;
   top: 0px;
   transition: opacity 200ms ease 0s;
   width: 100%;
   z-index: -1;
+
+  #background{
+    background-image: radial-gradient(farthest-side at 73% 21%, transparent, rgb(26, 29, 41));
+    position: absolute;
+    inset: 0px;
+
+    /* height: 60vh; */
+  }
 `;
 
 export const Content = styled.div`

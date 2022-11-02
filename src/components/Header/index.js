@@ -87,10 +87,8 @@ export const Header = () => {
 
   return(
     <Nav scroll={scroll} logged={logged}>
-      <Logo logged={logged}>
-        <a href="/home">
-          <img src={logged ? `/images/logoLogged.svg` : `/images/logo.svg`} alt="logo-disney" />
-        </a>
+      <Logo href="/home" logged={logged}>
+        <img src={logged ? `/images/logoLogged.svg` : `/images/logo.svg`} alt="logo-disney" />
       </Logo>
       
       {!logged ? 
