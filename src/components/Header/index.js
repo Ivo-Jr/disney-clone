@@ -21,7 +21,7 @@ import {
 export const Header = () => {
   const [ scroll, setScroll ] = useState(false);
   const [ compressionMenu, setCompressionMenu ] = useState(() => {
-    if(window.innerWidth  < 1024) {
+    if(window.innerWidth  <= 1054) {
       return true
     } else { return false}
   });
@@ -49,7 +49,7 @@ export const Header = () => {
         || document.documentElement.clientWidth
         || document.body.clientWidth;
 
-      if(width < 1024){
+      if(width <= 1054){
         setCompressionMenu(true)
       } else setCompressionMenu(false)
     });
@@ -116,30 +116,30 @@ export const Header = () => {
                 <SignOut>
                   <img className="compression-icon" src="/images/expanding-icon.svg" alt="expanding" />
                   <Dropdown className="">
-                    <a href="/">
+                    <a href="/home">
                       <img src="/images/star-icon.svg" alt="star" />
                       <span>ORIGINALS</span>
                     </a>
-                    <a href="/">
+                    <a href="/home">
                       <img src="/images/movie-icon.svg" alt="movie" />
                       <span>MOVIES</span>
                     </a>
-                    <a href="/">
+                    <a href="/home">
                       <img src="/images/tv-icon.svg" alt="tv" />
                       <span>SERIES</span>
                     </a>
                   </Dropdown>
                 </SignOut>
               : <>
-                  <a href="/">
+                  <a href="/home">
                     <img src="/images/star-icon.svg" alt="star" />
                     <span>ORIGINALS</span>
                   </a>
-                  <a href="/">
+                  <a href="/home">
                     <img src="/images/movie-icon.svg" alt="movie" />
                     <span>MOVIES</span>
                   </a>
-                  <a href="/">
+                  <a href="/home">
                     <img src="/images/tv-icon.svg" alt="tv" />
                     <span>SERIES</span>
                   </a>

@@ -69,7 +69,7 @@ export const NavMenu = styled.nav`
     }
 
     // lg
-    @media only screen and (max-width: 1023px){
+    @media only screen and (max-width: 1054px){
       margin: 0px 12px;
       
       img{
@@ -89,7 +89,7 @@ export const NavMenu = styled.nav`
       white-space: nowrap;
       position: relative;
 
-      @media screen and (max-width: 1023px){
+      @media screen and (max-width: 1054px){
         margin: 13px 0px 13px 8px;
       }
 
@@ -139,10 +139,6 @@ export const NavMenu = styled.nav`
       display: none;
     }
   `}
-
-  /* @media(max-width: 768px){
-    display: none;
-  } */
 `;
 
 export const Logo = styled.a`

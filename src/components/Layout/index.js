@@ -4,7 +4,7 @@ import { Outlet, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/auth';
 import { Header } from '../Header';
 
-export const Layout = () => {
+export default function Layout() {
   const { logged } = useAuth();
   const navigate = useNavigate();
 

@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 
 import { Routes, Route } from 'react-router-dom';
 import { Login } from '../Pages/Login';
-import { Layout } from '../components/Layout';
-import { Home } from '../Pages/Home';
-import { Details } from '../components/Details';
 import { LoginLayout } from '../components/LoginLayout';
+import { LoadingSpiner } from '../components/LoadingSpiner';
+
+const Home = lazy(() => import('../Pages/Home'));
+const Layout = lazy(() => import('../components/Layout'));
+const Details = lazy(() => import('../components/Details'));
 
 export const AppRoutes = () => {
   return(
@@ -17,10 +19,14 @@ export const AppRoutes = () => {
         }>
       </Route>
 
-      <Route path="/" element={<Layout />}>
-        <Route path="home" element={<Home />} />
-        <Route path="detail/:id" element={<Details />} />
+      <Route element={<Layout />}>
+        <Route path="/home" element={<Home />} />
+        <Route path="/detail/:id" element={
+          <Suspense fallback={<LoadingSpiner />}>
+            <Details />
+          </Suspense>
+        }/>
       </Route>
-    </Routes> 
+    </Routes>
   )
 }

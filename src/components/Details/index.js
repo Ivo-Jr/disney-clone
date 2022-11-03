@@ -3,10 +3,11 @@ import { useParams } from 'react-router-dom';
 
 import { db, collection, getDocs } from '../../services/firebase';
 import { LoadingSpiner } from '../LoadingSpiner';
+import { Footer } from '../Footer';
 import SvgIcon from '../SvgIcon';
 
-
 import { 
+  Main,
   Container, 
   Content,
   Background,
@@ -24,8 +25,7 @@ import {
   Description
 } from './styles';
 
-
-export const Details = () => {
+export default function Details() {
   const [ data, setData ] = useState();
   const [ loading, setLoading ] = useState(false);
   const { id } = useParams();
@@ -49,15 +49,26 @@ export const Details = () => {
     }
   }
 
+  const onTopPage = () => {
+    window.scroll(0,0);
+  }
+
   useEffect(() => {
     handleData();
   },[id]);
 
+  useEffect(() => {
+    onTopPage();
+  },[]);
+
   return(
-    <Container>
-      {loading 
+    <Main>
+      <Container>
+      <div id="background"/>
+      {loading && data === undefined 
         ? <LoadingSpiner />
-        : <Content>
+        : 
+        <Content>
             <Background>
               <img 
                 src={data?.backgroundImg} 
@@ -108,8 +119,10 @@ export const Details = () => {
                 {data?.decription}
               </Description>
             </ContentMeta>
-          </Content>
+        </Content>
       }
-    </Container>
+      </Container>
+      <Footer />
+    </Main>
   )
 }
