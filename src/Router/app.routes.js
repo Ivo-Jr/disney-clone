@@ -11,22 +11,24 @@ const Details = lazy(() => import('../components/Details'));
 
 export const AppRoutes = () => {
   return(
-    <Routes>
-      <Route path="/" element={
-          <LoginLayout>
-            <Login />
-          </LoginLayout>
-        }>
-      </Route>
+    <Suspense fallback={<LoadingSpiner />}>
+      <Routes>
+        <Route path="/" element={
+            <LoginLayout>
+              <Login />
+            </LoginLayout>
+          }>
+        </Route>
 
-      <Route element={<Layout />}>
-        <Route path="/home" element={<Home />} />
-        <Route path="/detail/:id" element={
-          <Suspense fallback={<LoadingSpiner />}>
-            <Details />
-          </Suspense>
-        }/>
-      </Route>
-    </Routes>
+        <Route element={<Layout />}>
+          <Route path="/home" element={<Home />} />
+          <Route path="/detail/:id" element={
+            <Suspense fallback={<LoadingSpiner />}>
+              <Details />
+            </Suspense>
+          }/>
+        </Route>
+      </Routes>
+    </Suspense>
   )
 }

@@ -89,7 +89,7 @@ export default function Details() {
                 <Classification>
                   {data?.rating && <img src={data?.rating} alt="rating" /> }
                   {data?.audioDescription && <img src={data?.audioDescription} alt="audioDescription" />}
-                  {data?.subtitlesForImparied && <img src={data?.subtitlesForImparied} alt="subtitlesForImparied" />}
+                  {data?.closedCaption && <img src={data?.closedCaption} alt="closedCaption" />}
                   <span>{data?.subTitle}</span>
                 </Classification>
                 <Genre>
@@ -116,7 +116,7 @@ export default function Details() {
               </Controls>
 
               <Description>
-                {data?.decription}
+                {data?.description}
               </Description>
             </ContentMeta>
         </Content>

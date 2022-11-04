@@ -35,22 +35,22 @@ export const ImgSlider = () => {
           </div>  
         </a>
       </Wrap>
-      {/* <Wrap>
+      <Wrap>
         <a href="/">
-          <img src="/images/slider-andir.jfif" alt="hulk"/>
+          <img src="/images/slider-assembled.jfif" alt="hulk"/>
           <div>
-            <img src="/images/description-andir.png" alt="hulk" />
+            <img src="/images/description-assembled.png" alt="hulk" />
           </div>  
         </a>
       </Wrap>
       <Wrap>
         <a href="/">
-          <img src="/images/slider-hulk.jfif" alt="hulk"/>
+          <img src="/images/slider-wakanda.jfif" alt="hulk"/>
           <div>
-            <img src="/images/description-hulk.png" alt="hulk" />
+            <img src="/images/description-wakanda.png" alt="hulk" />
           </div>  
         </a>
-      </Wrap> */}
+      </Wrap>
       <Wrap>
         <a href="/">
           <img src="/images/slider-hocus.jfif" alt="hocus" />
