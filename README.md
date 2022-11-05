@@ -12,6 +12,12 @@
   Disney+ is the streaming service for movies, series and other content from Disney, Pixar, Marvel, Star Wars, National Geographic and more.
 </h4>
 
+---
+
+[We are ONLINE, try Now](https://ivojr.com.br) :point_left:
+
+<br>
+
 <p align="center">
   <a href="#test_tube-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#rocket-Getting-started">Getting started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -58,7 +64,7 @@ This app simulates the Disney+ streaming service where users can login after pri
 ## :clapper: Demonstration
 
   <div style="display: flex;   flex-direction: column; align-items: center; margin: 15px 0px">
-    <img alt="my-wallet-gif" src="src/assets/movie/my-wallet.gif" width= "100%"/>    
+    <img alt="disney-clone-gif" src="public/videos/disney-clone.gif" width= "100%"/>    
   </div>
 
 ---
@@ -77,10 +83,10 @@ This app simulates the Disney+ streaming service where users can login after pri
   <div style="display: flex; flex-direction: column;
   align-items: center;">
   <h1 align="center" style="display: column; flex-direction:row;">
-      <img   style="margin: 15px 0px; width: 550px" alt="laptop-perspective" src="src/assets/layout/laptopPerspective.svg" />
+      <img   style="margin: 15px 0px; width: 550px" alt="laptop-perspective" src="public/layout/notebook.svg" />
       <div style="display: flex; justify-content: center">
-        <img   style="margin: 15px 0px; width: 230px" alt="iPad" src="src/assets/layout/iPad.svg"/>
-        <img   style="margin: 15px 0px; width: 210px" alt="cell-phone" src="src/assets/layout/cellPhone.svg"/>
+        <img   style="margin: 15px 0px; width: 320px" alt="iPad" src="public/layout/tablet.svg"/>
+        <img   style="margin: 15px 0px; width: 190px" alt="cell-phone" src="public/layout/cell.svg"/>
       </div>
   </h1>  
 
