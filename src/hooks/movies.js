@@ -5,11 +5,13 @@ import { onSnapshot, collection, db } from '../services/firebase';
 const MovieContext = createContext();
 
 export const MovieProvider = ({ children }) => {
+  const [carousel, setCarousel] = useState();
   const [recommends, setRecommends] = useState();
   const [featured, setFeatured] = useState();
   const [trending, setTrending] = useState();
   const [newsDisney, setNewsDisney] = useState();
 
+  let carouselArray = [];
   let recommendsArray = [];
   let featuredArray = [];
   let trendingArray = [];
@@ -19,6 +21,11 @@ export const MovieProvider = ({ children }) => {
     onSnapshot(collection(db, 'movies'), (snapshot) => {
       snapshot.docs.map((doc) => {
         switch(doc.data().type){
+          case 'carousel':
+            carouselArray = [...carouselArray, {id: doc.id, ...doc.data()}];
+            setCarousel(carouselArray)
+            break;
+
           case 'recommended':
             recommendsArray = [...recommendsArray, {id: doc.id, ...doc.data()}];
             setRecommends(recommendsArray);
@@ -49,6 +56,7 @@ export const MovieProvider = ({ children }) => {
   return(
     <MovieContext.Provider
       value={{
+        carousel,
         recommends,
         featured,
         trending,
@@ -62,6 +70,6 @@ export const MovieProvider = ({ children }) => {
 
 export const useMovie = () => {
   const contex = useContext(MovieContext);
-  const { recommends, featured, trending, newsDisney } = contex;
-  return { recommends, featured, trending, newsDisney }
+  const { carousel, recommends, featured, trending, newsDisney } = contex;
+  return { carousel, recommends, featured, trending, newsDisney }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMovie } from '../../hooks/movies';
-import { SkeletonCard } from '../SkeletonCard';
+import { SkeletonLoad } from '../Skeleton';
 
 import { 
   Container,
@@ -17,8 +17,8 @@ export const Trending = () => {
     <Container>
       <h4>Trending</h4>
       <Content>
-        { trending &&
-            trending.map((trend, idx) => (
+        { trending 
+          ? trending.map((trend, idx) => (
               <Wrap key={idx}>
                 <Link to={`/detail/${trend.id}`}>
                   <img 
@@ -28,7 +28,7 @@ export const Trending = () => {
                 </Link>
               </Wrap>
             ))
-            || <SkeletonCard cards={4} />
+          : <SkeletonLoad cards={4} />
         }
       </Content>
     </Container>

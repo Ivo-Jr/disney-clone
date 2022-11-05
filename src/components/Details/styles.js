@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
+export const Main = styled.div`
   background-color: rgb(26, 29, 41);
-  position: relative;
-  height: 100vh;
+  position: absolute;
   top: 0px;
   transition: opacity 200ms ease 0s;
   width: 100%;
@@ -15,6 +14,23 @@ export const Container = styled.div`
     inset: 0px;
 
     /* height: 60vh; */
+  }
+`;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 100vh;
+
+  #background {
+    background-color: rgb(26, 29, 41);
+    position: fixed;
+    height: 100vh;
+    top: 0px;
+    transition: opacity 200ms ease 0s;
+    width: 100%;
+    z-index: -3;
   }
 `;
 

@@ -6,7 +6,7 @@ export const Container = styled.footer`
   align-items: center;
   flex-direction: column;
   
-  /* margin-top: 200px; */
+  margin-top: 0px;
   padding: 19px 0px 0px 0px;
   
   width: 100%;
@@ -38,6 +38,7 @@ export const Content = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   max-width: 500px;
+  text-align: center;
 `;
 
 export const FirstButtonsSession = styled.section`

@@ -12,19 +12,21 @@ import { Viewers } from '../../components/Viewers';
 import { Container } from './styles';
 import { Footer } from '../../components/Footer';
 
-export const Home = () => {
+export default function Home() {
   return(
     <SkeletonTheme baseColor="#202020" highlightColor="#444">
       <MovieProvider>
-        <Container>
-          <ImgSlider />
-          <Viewers />
-          <Recommends />
-          <NewDisney />
-          <Featured />
-          <Trending />
+        <>
+          <Container>
+            <ImgSlider />
+            <Viewers />
+            <Recommends />
+            <NewDisney />
+            <Featured />
+            <Trending />
+          </Container>
           <Footer />
-        </Container>
+        </>
       </MovieProvider>
     </SkeletonTheme>
   );

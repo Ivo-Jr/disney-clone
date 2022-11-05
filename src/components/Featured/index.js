@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMovie } from '../../hooks/movies';
-import { SkeletonCard } from '../SkeletonCard';
+import { SkeletonLoad } from '../Skeleton';
 
 import { 
   Container,
@@ -17,8 +17,8 @@ export const Featured = () => {
     <Container>
       <h4>Featured Marvel</h4>
       <Content>
-        { featured && 
-            featured.map((feature, idx) => (
+        { featured 
+          ? featured.map((feature, idx) => (
               <Wrap key={idx}>
                 <Link to={`/detail/${feature.id}`}>
                   <img 
@@ -28,7 +28,7 @@ export const Featured = () => {
                 </Link>
               </Wrap>
             ))
-            || <SkeletonCard cards={4} />
+          : <SkeletonLoad cards={4} />
         }
       </Content>
     </Container>

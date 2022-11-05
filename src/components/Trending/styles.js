@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  padding: 0 0 26px;
-
+  padding: 0 0 76px;
+  
   h4 {
     letter-spacing: .11px;
     

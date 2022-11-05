@@ -19,8 +19,6 @@ const animate = keyframes`
   }
 `;
 
-export const Container = styled.div``;
-
 export const Carousel = styled(Slider)`
   margin-top: 20px;
 
@@ -112,21 +110,6 @@ export const Carousel = styled(Slider)`
   
   .slick-active div div a div img{
     animation: ${animate} 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 150ms;
-  }
-
-  .slick-prev {
-    /* @media only screen and (max-width: 769px) { */
-      /* margin-right: -80px; */
-    /* } */
-
-    /* transform: translate(-50%, -50%);
-    width: 40px !important;
-    height: 40px !important; */
-  }
-
-  .slick-next {
-    /* right: -70px; */
- 
   }
 `;
 
