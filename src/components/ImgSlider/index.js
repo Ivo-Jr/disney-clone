@@ -1,6 +1,6 @@
 import React from 'react';
 import { useMovie } from '../../hooks/movies';
-import { SkeletonSlide } from '../Skeleton';
+import { SkeletonLoad } from '../Skeleton';
 
 import { 
   Carousel,
@@ -33,7 +33,7 @@ export const ImgSlider = () => {
               </a>
             </Wrap>
           )) 
-        : <SkeletonSlide />
+        : <SkeletonLoad cards={1}/>
       } 
     </Carousel>
   )

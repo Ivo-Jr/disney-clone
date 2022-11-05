@@ -1,13 +1,22 @@
 import React from 'react';
 
 import Skeleton  from 'react-loading-skeleton';
-import { Wrap } from './styles';
+import { SliderWrap, ThumbnailWrap } from './styles';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-export const SkeletonSlide = () => {
+export const SkeletonLoad = ({ cards }) => {
   return(
-    <Wrap>
-      <Skeleton className= "skeleton" />
-    </Wrap>
+    Array(cards).fill(0)
+      .map((_, idx) => (
+        cards > 1 
+          ? 
+            <ThumbnailWrap key={idx}>
+              <Skeleton className= "skeleton" />
+            </ThumbnailWrap>
+          :
+            <SliderWrap key={idx}>
+              <Skeleton className= "skeleton" />
+            </SliderWrap>
+      ))
   )
 }
