@@ -17,8 +17,8 @@ export const Recommends = () => {
     <Container>
       <h4>Recommended For You</h4>
       <Content>
-        { recommends && 
-            recommends.map((recommend, idx) => (
+        { recommends 
+          ? recommends.map((recommend, idx) => (
               <Wrap key={idx}>
                 <Link to={`/detail/${recommend.id}`}>
                   <img 
@@ -28,8 +28,7 @@ export const Recommends = () => {
                 </Link>
               </Wrap>
             ))
-          || 
-          <SkeletonCard cards={4}/> }
+          : <SkeletonCard cards={4}/> }
       </Content>
     </Container>
   )

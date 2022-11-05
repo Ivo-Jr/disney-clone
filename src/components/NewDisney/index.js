@@ -17,8 +17,8 @@ export const NewDisney = () => {
     <Container>
       <h4>New to Disney+</h4>
       <Content>
-        { newsDisney && 
-            newsDisney.map((disney, idx) => (
+        { newsDisney 
+          ? newsDisney.map((disney, idx) => (
               <Wrap key ={idx}>
                 <Link to={`/detail/${disney.id}`}>
                   <img 
@@ -28,7 +28,7 @@ export const NewDisney = () => {
                 </Link>
               </Wrap>
             ))
-          || <SkeletonCard cards={4} />
+          : <SkeletonCard cards={4} />
         }
       </Content>
     </Container>

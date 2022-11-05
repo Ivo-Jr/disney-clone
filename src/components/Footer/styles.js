@@ -38,6 +38,7 @@ export const Content = styled.div`
   justify-content: center;
   flex-flow: row wrap;
   max-width: 500px;
+  text-align: center;
 `;
 
 export const FirstButtonsSession = styled.section`

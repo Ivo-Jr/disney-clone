@@ -17,8 +17,8 @@ export const Trending = () => {
     <Container>
       <h4>Trending</h4>
       <Content>
-        { trending &&
-            trending.map((trend, idx) => (
+        { trending 
+          ? trending.map((trend, idx) => (
               <Wrap key={idx}>
                 <Link to={`/detail/${trend.id}`}>
                   <img 
@@ -28,7 +28,7 @@ export const Trending = () => {
                 </Link>
               </Wrap>
             ))
-            || <SkeletonCard cards={4} />
+          : <SkeletonCard cards={4} />
         }
       </Content>
     </Container>
