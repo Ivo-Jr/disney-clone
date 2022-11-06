@@ -83,7 +83,7 @@ This app simulates the Disney+ streaming service where users can login after pri
   <div style="display: flex; flex-direction: column;
   align-items: center;">
   <h1 align="center" style="display: column; flex-direction:row;">
-      <img   style="margin: 15px 0px; width: 550px" alt="laptop-perspective" src="public/layout/notebook.svg" />
+      <img   style="margin: 15px 0px 15px 20px; padding-left: 30px; width: 550px" alt="laptop-perspective" src="public/layout/notebook.svg" />
       <div style="display: flex; justify-content: center">
         <img   style="margin: 15px 0px; width: 320px" alt="iPad" src="public/layout/tablet.svg"/>
         <img   style="margin: 15px 0px; width: 190px" alt="cell-phone" src="public/layout/cell.svg"/>
